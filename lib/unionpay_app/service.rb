@@ -37,6 +37,7 @@ module UnionpayApp
       if request.response.success?
         tn = Hash[*request.response.body.split("&").map{|a| a.gsub("==", "@@").split("=")}.flatten]['tn']
       else
+        puts request.response.inspect
         tn = ""
       end
     end
